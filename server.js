@@ -51,6 +51,14 @@ app.get("/", (request, response) => {
   response.render("index", { title: "Turbo Native Demo", page_class: "index" })
 })
 
+app.post("/submit_and_redirect", (request, response) => {
+  response.redirect("/submit_redirected");
+})
+
+app.get("/submit_redirected", (request, response) => {
+  response.render("submit_redirected", { title: "Submit redirected" });
+})
+
 app.get("/one", (request, response) => {
   response.render("one", { title: "How’d You Get Here?" })
 })
